@@ -60,13 +60,8 @@ namespace Fargowiltas.NPCs
             NPC.Happiness.SetNPCAffection<Deviantt>(AffectionLevel.Like);
             NPC.Happiness.SetNPCAffection<LumberJack>(AffectionLevel.Dislike);
 
-            NPCID.Sets.DebuffImmunitySets.Add(NPC.type, new Terraria.DataStructures.NPCDebuffImmunityData
-            {
-                SpecificallyImmuneTo = new int[]
-                {
-                    BuffID.Suffocation
-                }
-            });
+            
+            NPCID.Sets.SpecificDebuffImmunity[NPC.type][BuffID.Suffocation] = true;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

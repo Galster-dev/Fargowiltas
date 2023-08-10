@@ -185,7 +185,7 @@ namespace Fargowiltas
                 HelpDialogueType.Misc, (name) => !Main.hardMode);
 
             AddDialogue("The water is bogging you down? Never had an issue with it, personally... Have you tried breathing water instead of air?",
-                HelpDialogueType.Environment, (name) => !Main.LocalPlayer.accFlipper && !Main.LocalPlayer.gills && !(bool)(ModLoader.GetMod("FargowiltasSouls").Call("MutantAntibodies") ?? false));
+                HelpDialogueType.Environment, (name) => !Main.LocalPlayer.GetJumpState(ExtraJump.Flipper).Enabled && !Main.LocalPlayer.gills && !(bool)(ModLoader.GetMod("FargowiltasSouls").Call("MutantAntibodies") ?? false));
 
             AddDialogue("The underworld has gotten a lot hotter since the last time I visited. I hear an obsidian skull is a good luck charm against burning alive, though!",
                 HelpDialogueType.Environment, (name) => !Main.LocalPlayer.fireWalk && !(Main.LocalPlayer.lavaMax > 0) && !Main.LocalPlayer.buffImmune[BuffID.OnFire] && !(bool)(ModLoader.GetMod("FargowiltasSouls").Call("PureHeart") ?? false));
